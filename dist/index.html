@@ -32,7 +32,7 @@
 
   <script type="text/javascript">
     $(function () {
-      var url ="specs/v2/model.json";
+      var url ="/docs/specs/v2/model.json";
 
       hljs.configure({
         highlightSizeThreshold: 5000
@@ -45,6 +45,7 @@
       window.swaggerUi = new SwaggerUi({
         url: url,
         dom_id: "swagger-ui-container",
+        validatorUrl: null,
         supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
         onComplete: function(swaggerApi, swaggerUi){
           if(typeof initOAuth == "function") {
@@ -80,21 +81,28 @@
       }
   });
   </script>
+<style type="text/css">
+#bm-header {
+    background-color: #00407E;
+    padding: 9px 14px 19px 14px;
+    min-width: 775px;
+}
+</style>
 </head>
 
-<body class="swagger-section">
-<div id='header'>
-  <div class="swagger-ui-wrap">
-    <a id="logo" href="http://swagger.io"><img class="logo__img" alt="swagger" height="30" width="30" src="images/logo_small.png" /><span class="logo__title">swagger</span></a>
+<body>
+
+<div id='bm-header'>
+  <div >
+    <a href="/"><img alt="BlueMind" src="images/logo.png" /><span class="logo__title">BM Docs</span></a>
     <form id='api_selector'>
-      <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
       <div id='auth_container'></div>
-      <div class='input'><a id="explore" class="header__btn" href="#" data-sw-translate>Explore</a></div>
     </form>
   </div>
 </div>
-
+<div class="swagger-section">
 <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
 <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+</div>
 </body>
 </html>
